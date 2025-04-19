@@ -1,0 +1,23 @@
+#include "/home/chemistry/phd/cyz218376/scratch/solution_system/charmm36-feb2021.ff/forcefield.itp"
+
+; additional params for the molecule
+#include "/home/chemistry/phd/cyz218376/scratch/solution_system/the.prm"
+#include "/home/chemistry/phd/cyz218376/scratch/solution_system/asp.prm"
+
+#include "/home/chemistry/phd/cyz218376/scratch/solution_system/the.itp"
+#include "/home/chemistry/phd/cyz218376/scratch/solution_system/asp.itp"
+
+#include "/home/chemistry/phd/cyz218376/scratch/solution_system/charmm36-feb2021.ff/tip3p.itp"
+
+
+
+
+[ system ]
+; Name
+cocrystal 
+
+[ molecules ]
+; Compound                #mols
+THE                        170
+ASP                        165
+SOL                       6342
