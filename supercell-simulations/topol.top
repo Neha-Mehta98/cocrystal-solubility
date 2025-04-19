@@ -1,0 +1,19 @@
+#include "./charmm36-feb2021.ff/forcefield.itp"
+
+; additional params for the molecule
+#include "./the.prm"
+#include "./asp.prm"
+
+#include "./the.itp"
+#include "./asp.itp"
+
+#include "./charmm36-feb2021.ff/tip3p.itp"
+
+[ system ]
+; Name
+cocrystal 
+
+[ molecules ]
+; Compound                #mols
+THE                        160
+ASP                        160
