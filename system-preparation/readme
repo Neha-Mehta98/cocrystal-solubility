@@ -1,1 +1,27 @@
-this folder contain the files required to prepare the systems for biased simulations (  state A and state B).
+This folder contain the files required to prepare the systems for biased simulations ( state A and state B).
+
+1. Energy minimization: performed as for the seed crystal.
+
+2. NVT equilibration: Temperature equilibration applied to reach target simulation conditions performed as for the seed crystal.
+
+3. Pressure Equilibration: Pressure equilibration performed using a semi-isotropic Parrinello–Rahman barostat in three subsequent steps :
+
+        i.  100 ps with 2 fs time step
+        ii. 100 ps with 0.5 fs time step
+        iii. 250 ps with 2 fs time step
+
+    Extended simulation: System continued for 20 ns; average Lz sampled.
+
+4. NVT production : 1000 ps with 2 fs time step
+
+5. COM Restraint : COM restraint applied to keep the crystal centered along the simulation box.Restraint protocol performed in four steps:
+    i. 1 ns with 1k restraint
+    ii. 1 ns with 100k restraint
+    iii. 1 ns with 1000k restraint
+    iv. 25 ns with 1000k  restraint
+
+The analysis/ folder contains three subdirectories for surface-structure CV determination, kink-site position determination, and edge-adsorption CV determination.
+
+
+6. 
+
