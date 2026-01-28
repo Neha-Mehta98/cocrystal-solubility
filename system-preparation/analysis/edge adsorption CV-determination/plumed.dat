@@ -1,0 +1,28 @@
+# Biased THE molecules
+GROUP ATOMS=2942,3026,3194,6722,6743,6764,6785,6806,6827,6848,6869,6890,6911  LABEL=theophylline_C2    # C2 atoms of THE
+GROUP ATOMS=2955,3039,3207,6735,6756,6777,6798,6819,6840,6861,6882,6903,6924  LABEL=theophylline_O1    # O1 atoms of THE
+
+# Wall THE molecules
+GROUP ATOMS=theophylline_C2,theophylline_O1  LABEL=theophylline
+
+
+# Prevent THE growth at THE layer 4A row 1
+ZROWY ...
+ LABEL=s_ur_THE
+ CENTER=theophylline
+ ZETAL_Y=-1.17000
+ ZETAU_Y=1.96000
+ SIGMAL_Y=150
+ SIGMAU_Y=150
+ LB_Z=0.00
+ UB_Z=5.00
+ ZETAL_Z=1.1000
+ ZETAU_Z=2.0500
+ SIGMAL_Z=1000
+ SIGMAU_Z=150
+... ZROWY
+
+
+
+# Print value of the CV and bias to a file named COLVAR
+PRINT STRIDE=500  ARG=* FILE=COLVAR
