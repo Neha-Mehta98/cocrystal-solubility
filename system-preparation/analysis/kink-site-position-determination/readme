@@ -1,1 +1,3 @@
-
+post process the trajectory from the last COM equilibration...
+1. ./driver.sh
+2. python  get_ato_pos_values.py
