@@ -2,4 +2,4 @@ post process the trajectory from the last COM equilibration...
 1. ./driver.sh
 2. python  get_ato_pos_values.py
 
-This can be used to get all the reference positions of atoms you want by modifying the index number in the plumed.dat file and repeating the following procedure.
+This can be used to get all the reference positions of atoms by modifying the index number in the plumed.dat file and repeating the following procedure.
