@@ -15,10 +15,10 @@ This folder contain the files required to prepare the systems for biased simulat
 4. NVT production : 1000 ps with 2 fs time step
 
 5. COM Restraint : COM restraint applied to keep the crystal centered along the simulation box.Restraint protocol performed in four steps:
-    i. 1 ns with 1k restraint
-    ii. 1 ns with 100k restraint
-    iii. 1 ns with 1000k restraint
-    iv. 25 ns with 1000k  restraint
+    i. 1 ns with 1k restraint NVT
+    ii. 1 ns with 100k restraint NVT 
+    iii. 1 ns with 1000k restraint NVT
+    iv. 25 ns with 1000k  restraint NVT 
 
 The analysis/ folder contains three subdirectories for surface-structure CV determination, kink-site position determination, and edge-adsorption CV determination.
 
