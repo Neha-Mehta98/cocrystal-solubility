@@ -1,6 +1,4 @@
-Initial file is supercell.gro which is created from experimental structure. This file is used to prepare the crystal seed.
-
-
+Initial file is THE160ASP160Face001.gro which is created from experimental structure. This file is used to prepare the system for all simulations and the foloowing procedure is followed to prepare the system.
 
 1.  Energy minimization: Steepest descent minimization was performed until the maximum force on each atom was ≤ 50 kJ/mol/nm.
 
