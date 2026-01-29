@@ -2,8 +2,8 @@ Initial file is THE160ASP160Face001.gro which is created from experimental struc
 
 1.  Energy minimization: Steepest descent minimization was performed using the file gromacs-energy-minimization.mdp.
 
-2.  NVT equilibration: The system was equilibrated for 750 ps using a 2 fs time step at a target temperature of 298 K.
+2.  NVT equilibration: The system was equilibrated for 750 ps using a 2 fs time step at a target temperature of 298 K using the file gromacs-nvt-equilibration-md-parameters-base.mdp.
 
-3.  NPT equilibration: Anisotropic Parrinello–Rahman pressure coupling at 1 bar was applied through three consecutive runs of 100 ns (0.1 fs), 3.5 ns (0.2 fs), and 2.5 ns (0.4 fs) time steps.
+3.  NPT equilibration: Anisotropic Parrinello–Rahman pressure coupling at 1 bar was applied through three consecutive runs of 100 ns (0.1 fs), 3.5 ns (0.2 fs), and 2.5 ns (0.4 fs) time steps. The file named gromacs-npt-md-parameters-base.mdp can be modified to run these simulations.
 
 4.  NPT production: A 25 ns production run was performed under NPT conditions at 1 bar using the Parrinello–Rahman barostat with a 0.2 fs time step
