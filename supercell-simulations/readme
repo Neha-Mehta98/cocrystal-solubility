@@ -1,6 +1,6 @@
 Initial file is THE160ASP160Face001.gro which is created from experimental structure. This file is used to prepare the system for all simulations and the foloowing procedure is followed to prepare the system.
 
-1.  Energy minimization: Steepest descent minimization was performed until the maximum force on each atom was ≤ 50 kJ/mol/nm.
+1.  Energy minimization: Steepest descent minimization was performed using the file gromacs-energy-minimization.mdp.
 
 2.  NVT equilibration: The system was equilibrated for 750 ps using a 2 fs time step at a target temperature of 298 K.
 
