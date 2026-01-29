@@ -18,6 +18,8 @@ cocrystal
 
 [ molecules ]
 ; Compound                #mols
-THE                        170
-ASP                        165
+THE                        160
+ASP                        160
+THE                        10 
+ASP                        10
 SOL                       6286
