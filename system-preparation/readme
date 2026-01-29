@@ -1,27 +1,28 @@
-This folder contain the files required to prepare the systems for biased simulations ( state A and state B).
+System preparation for biased simulations (States A and B)
 
-1. Energy minimization: performed as for the seed crystal.
+The final configuration from step 4 of the system-preparation workflow was used. The simulation box was extended along the z-direction to expose the {001} face, resulting in box dimensions of 3.74711 × 3.95170 × 18.20000 nm³.
+10 THE, 10 ASP, and 6286 water molecules were added. Final solvated structure: THE170ASP170H2O6286Face001.gro
 
-2. NVT equilibration: Temperature equilibration applied to reach target simulation conditions performed as for the seed crystal.
+1. Energy minimization
+Performed using gromacs-energy-minimization.mdp, following the same protocol as the seed crystal.
 
-3. Pressure Equilibration: Pressure equilibration performed using a semi-isotropic Parrinello–Rahman barostat in three subsequent steps :
+2. NVT equilibration
+Temperature equilibration performed using gromacs-nvt-equilibration-md-parameters-base.mdp.
 
-        i.  100 ps with 2 fs time step
-        ii. 100 ps with 0.5 fs time step
-        iii. 250 ps with 2 fs time step
+3. NPT equilibration (semi-isotropic NPT)
+Performed using gromacs-npt-md-parameters-base.mdp, modified for three consecutive stages:
+i) 100 ps, 2 fs time step
+ii) 100 ps, 0.5 fs time step
+iii) 250 ps, 2 fs time step
+Simulation continued after stage 3 for 20 ns.
 
-    Extended simulation: System continued for 20 ns; average Lz sampled.
+4. NVT production
+1000 ps NVT run using gromacs-nvt-md-parameters-base.mdp with a 2 fs time step.
 
-4. NVT production : 1000 ps with 2 fs time step
-
-5. COM Restraint : COM restraint applied to keep the crystal centered along the simulation box.Restraint protocol performed in four steps:
-    i. 1 ns with 1k restraint NVT
-    ii. 1 ns with 100k restraint NVT 
-    iii. 1 ns with 1000k restraint NVT
-    iv. 25 ns with 1000k  restraint NVT 
-
-The analysis/ folder contains three subdirectories for surface-structure CV determination, kink-site position determination, and edge-adsorption CV determination.
-
-
-6. 
+5. Center-of-mass (COM) restraint
+Applied after NVT production simulations using plumed.dat using gromacs-nvt-md-parameters-base.mdp file :
+i) 1 ns with 1 k restraint
+ii) 1 ns with 100 k restraint
+iii) 1 ns with 1000 k restraint
+iv) 25 ns with 1000 k restraint
 
