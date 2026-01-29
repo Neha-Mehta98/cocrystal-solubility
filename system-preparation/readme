@@ -26,3 +26,13 @@ ii) 1 ns with 100 k restraint
 iii) 1 ns with 1000 k restraint
 iv) 25 ns with 1000 k restraint
 
+6. Analysis – Surface Structure CV, and Edge-adsorption CVs, Biased CV
+  i) Surface structure CV
+    Calculated by post-processing the final restrained NVT trajectory (25 ns, 1000 k COM restraint).Files given for calculating surface structure CV for O1 atoms of THE-4A layer.; the same strategy can be applied to define surface structure CVs for other layers
+Workflow:
+            a) Run driver.sh in y_THE_O1 and z_THE_O1 folders.
+            b) Run get_surface_structure_CV_parameter_values.py in corresponding folders to get CV parameters.
+            c) For each folder THE_O1_y_row_1 to THE_O1_y_row_4: first run driver.sh in the corresponding x_THE_O1 subfolder, then run get_surface_structure_CV_parameter_values.py in the same folder to compute the CV parameters
+
+  ii) Edge-adsorption CVs
+
