@@ -1,1 +1,48 @@
+ Define the Parameters
+    You need the following parameters:
+
+        z_k (Vertical position of O1 atoms in the 4A layer)
+        y_k (Y position of O1 atoms in the 4A layer)
+        x_k (X position of O1 atoms in the 4A layer)
+
+1. To calculate z_k (Vertical position of O1 atoms):
+
+        (i)Go to the folder z_THE_O1.
+
+        (ii)Run the driver.sh script, which calculates the density of O1 atoms in the 4A layer of theophylline (THE).
+
+        (iii)Then, run the Python script get_surface_structure_CV_parameter_values.py from this folder. This will provide the value of z_k.
+
+2. To calculate y_k (Y position of O1 atoms):
+
+        (i)Go to the folder y_THE_O1.
+
+        (ii)Run the driver.sh script, which calculates the density of O1 atoms in the 4A THE layer.
+
+        (iii)Then, run the corresponding Python script from this folder to get the value of y_k.
+
+3. To calculate x_k (X position of O1 atoms):
+
+        (i) Navigate to the folder THE_O1_y_row_1.
+
+        (ii) Inside, find the folder x_THE_O1 and run the driver.sh script from there.
+
+        (iii)Once done, go one folder back and run the Python script from the THE_O1_y_row_1 folder to obtain x_k.
+        
+4. Repeat the process for the following folders:
+
+THE_O1_y_row_2
+THE_O1_y_row_3
+THE_O1_y_row_4
+
+5. Plug the values into the Plumed file:
+
+(i)Now, go to the surf_struct_CV folder.
+(ii)In this folder, you'll find a Plumed file. This file needs to be updated with the x_k, y_k, and z_k values you obtained from the steps above.
+
+6. Post-process the trajectory:
+
+After updating the Plumed file with the parameters, post-process the trajectory with this file to check the values of the surface structure CV.
+
+
 
