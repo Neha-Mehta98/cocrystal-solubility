@@ -1,0 +1,34 @@
+s_cryst: READ FILE=../COLVAR_sc_PVIIb29 EVERY=1 IGNORE_TIME VALUES=s_cryst
+ses_C2: READ FILE=../COLVAR_PVIIb29 EVERY=1 IGNORE_TIME VALUES=ses_C2
+
+metad: READ FILE=../COLVAR_PVIIb29 EVERY=1 IGNORE_TIME VALUES=metad.rbias
+
+lwall_sws_C2: READ FILE=../COLVAR_PVIIb29 EVERY=1 IGNORE_TIME VALUES=lwall_sws_C2.bias
+uwall_sws_C2: READ FILE=../COLVAR_PVIIb29 EVERY=1 IGNORE_TIME VALUES=uwall_sws_C2.bias
+
+lwall_sws_O1: READ FILE=../COLVAR_PVIIb29 EVERY=1 IGNORE_TIME VALUES=lwall_sws_O1.bias
+uwall_sws_O1: READ FILE=../COLVAR_PVIIb29 EVERY=1 IGNORE_TIME VALUES=uwall_sws_O1.bias
+
+lwall_sws_O2: READ FILE=../COLVAR_PVIIb29 EVERY=1 IGNORE_TIME VALUES=lwall_sws_O2.bias
+uwall_sws_O2: READ FILE=../COLVAR_PVIIb29 EVERY=1 IGNORE_TIME VALUES=uwall_sws_O2.bias
+
+lwall_ses_C2: READ FILE=../COLVAR_PVIIb29 EVERY=1 IGNORE_TIME VALUES=lwall_ses_C2.bias
+uwall_ses_C2: READ FILE=../COLVAR_PVIIb29 EVERY=1 IGNORE_TIME VALUES=uwall_ses_C2.bias
+
+weights: REWEIGHT_METAD TEMP=300 ARG=metad.rbias,lwall_sws_C2.bias,uwall_sws_C2.bias,lwall_sws_O1.bias,uwall_sws_O1.bias,lwall_sws_O2.bias,uwall_sws_O2.bias,lwall_ses_C2.bias,uwall_ses_C2.bias
+
+HISTOGRAM ...
+ ARG=s_cryst,ses_C2
+ GRID_MIN=0.0,0.0
+ GRID_MAX=1.0,1.0
+ GRID_BIN=120,120
+ BANDWIDTH=0.1,0.1
+ LOGWEIGHTS=weights
+ LABEL=hh
+... HISTOGRAM
+
+DUMPGRID GRID=hh FILE=histo_2d.dat FMT=%24.16e STRIDE=0
+
+CONVERT_TO_FES GRID=hh LABEL=FES_temp TEMP=300
+
+DUMPGRID GRID=FES_temp FILE=fes_reweighted_2d.dat STRIDE=50000
